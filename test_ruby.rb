@@ -89,7 +89,7 @@ url=URI.parse("http://www.ruby-lang.org/ja/")#url是uri的一种
 http=Net::HTTP.start(url.host,url.port)
 doc =http.get(url.path)
 puts doc
-=end
+
 def cles2fashr(ctemp)
 	cfahr=ctemp*9/5+32
 end
@@ -99,3 +99,69 @@ end
 for i in 1..10 do
  puts Random.rand(7)
 end
+a.collect do |item|
+if item%3===0
+b.push item
+end
+end
+
+a.collect! do |item|
+2*item
+end
+b=[]
+
+
+a=1..100
+a=a.to_a
+#puts b.size
+#a.reject! do |item|
+#   (item%3)==0
+#end
+#a.reverse!
+#puts a
+sum=0
+a.each do |i|
+sum+=i
+end
+puts sum
+result=Array.new(10)
+10.times do |i|
+#puts i
+result[i] = a[10*i..(10*i+9)]
+end
+#puts a[10,11]
+puts result[0][3]
+
+
+def sum_array
+nums1=[1,2,3]
+nums2=[4,6,8]
+c=Array.new
+nums1.zip(nums2) do |a,b|
+ c<<a+b
+ end
+ end
+puts sum_array
+=end
+
+str="I believe that I will be a successful man"
+a=str.split(/ /);
+
+a.sort! do |a,b| 
+a=a.downcase 
+b=b.downcase 
+a<=>b
+end
+a=0;
+h=Hash.new(0)
+str.each_char do |a|
+h[a]+=1
+end
+h.each do |a,b|
+#
+printf "\'#{a}\':"
+b.times { print "*"}
+puts
+end
+
+
